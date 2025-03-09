@@ -52,6 +52,7 @@ const Profile = () => {
             <Box component="form" noValidate autoComplete="off">
                 <TextField
                     fullWidth
+                    disabled
                     margin="normal"
                     label="Имя пользователья"
                     variant="outlined"

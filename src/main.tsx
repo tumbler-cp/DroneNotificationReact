@@ -10,6 +10,7 @@ import Signin from './auth/pages/Signin.tsx'
 import Signup from './auth/pages/Signup.tsx'
 import AuthGuard from './auth/guard/AuthGuard.tsx'
 import { ProfileProvider } from './sender/service/ProfileService.tsx'
+import { SenderProvider } from './sender/service/SenderService.tsx'
 
 const root = document.getElementById('root')
 

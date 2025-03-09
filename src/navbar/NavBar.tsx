@@ -21,7 +21,10 @@ const NavBar = () => {
 
     const customerMenuItems = [{ path: '/', label: 'Главная' }]
 
-    const senderMenuItems = [{ path: '/', label: 'Главная' }]
+    const senderMenuItems = [
+        { path: '/', label: 'Главная' },
+        { path: '/sender', label: 'Профиль отправителя' },
+    ]
 
     const menuItems = mode === 'Customer' ? customerMenuItems : senderMenuItems
 

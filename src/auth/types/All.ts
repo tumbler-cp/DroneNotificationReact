@@ -15,3 +15,15 @@ export type DroneStation = {
     id: number
     address: string
 }
+
+export type Sender = {
+    id: number
+    shopName: string
+}
+
+export type BindRequest = {
+    userID: number
+    token: {
+        token: string
+    }
+}
