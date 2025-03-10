@@ -1,12 +1,24 @@
 import { Route, Routes } from 'react-router-dom'
 import NavBar from './navbar/NavBar'
-import Home from './home/Home'
 import Profile from './sender/page/Profile'
 import SenderPage from './sender/page/SenderPage'
 import { SenderProvider } from './sender/service/SenderService'
 import Goods from './sender/page/Goods'
 import { GoodProvider } from './sender/service/GoodService'
 import NewGood from './sender/page/NewGood'
+import { WHProvider } from './sender/service/WHService'
+import WareHouse from './sender/page/WareHouse'
+import { CustomerProvider } from './customer/service/CustomerService'
+import CustomerPage from './sender/page/Customer'
+import { ShopProvider } from './shop/service/ShopService'
+import Shop from './shop/page/Shop'
+import Home from './home/Home'
+import CustomerOrderProvider, {
+    CustomerOrderContext,
+} from './order/service/OrderService'
+import CustomerOrders from './order/page/Orders'
+import SenderOrderProvider from './order/service/SenderOrderService'
+import SenderOrders from './order/page/SenderOrders'
 
 function App() {
     return (
@@ -25,6 +37,24 @@ function App() {
                         }
                     />
                     <Route
+                        path="/customer"
+                        element={
+                            <CustomerProvider>
+                                <CustomerPage />
+                            </CustomerProvider>
+                        }
+                    />
+                    <Route
+                        path="/shop"
+                        element={
+                            <CustomerProvider>
+                                <ShopProvider>
+                                    <Shop />
+                                </ShopProvider>
+                            </CustomerProvider>
+                        }
+                    />
+                    <Route
                         path="/goods"
                         element={
                             <GoodProvider>
@@ -38,6 +68,32 @@ function App() {
                             <GoodProvider>
                                 <NewGood />
                             </GoodProvider>
+                        }
+                    />
+                    <Route
+                        path="/warehouse"
+                        element={
+                            <GoodProvider>
+                                <WHProvider>
+                                    <WareHouse />
+                                </WHProvider>
+                            </GoodProvider>
+                        }
+                    />
+                    <Route
+                        path="/receiving"
+                        element={
+                            <CustomerOrderProvider>
+                                <CustomerOrders />
+                            </CustomerOrderProvider>
+                        }
+                    />
+                    <Route
+                        path="/history"
+                        element={
+                            <SenderOrderProvider>
+                                <SenderOrders />
+                            </SenderOrderProvider>
                         }
                     />
                     <Route

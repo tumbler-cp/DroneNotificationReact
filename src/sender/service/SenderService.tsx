@@ -5,7 +5,7 @@ import {
     useEffect,
     useState,
 } from 'react'
-import { BindRequest, Sender } from '../../auth/types/All'
+import { Sender } from '../../auth/types/All'
 import axios from 'axios'
 import { AuthContext } from '../../auth/service/AuthService'
 

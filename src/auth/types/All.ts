@@ -7,6 +7,7 @@ export type Good = {
 }
 
 export type WHPosition = {
+    id: number
     good: Good
     quantity: number
 }
