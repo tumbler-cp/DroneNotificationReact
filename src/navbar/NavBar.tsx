@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../auth/service/AuthService'
 import { MenuItem, Select } from '@mui/material'
@@ -7,7 +7,11 @@ import { CgProfile } from 'react-icons/cg'
 
 const NavBar = () => {
     const authContext = useContext(AuthContext)
-    const [mode, setMode] = useState('Customer')
+    const [mode, setMode] = useState(localStorage.getItem('mode') || 'Customer')
+
+    useEffect(() => {
+        localStorage.setItem('mode', mode)
+    }, [mode])
 
     if (!authContext) {
         return null
@@ -24,6 +28,7 @@ const NavBar = () => {
     const senderMenuItems = [
         { path: '/', label: 'Главная' },
         { path: '/sender', label: 'Профиль отправителя' },
+        { path: '/goods', label: 'Товары' },
     ]
 
     const menuItems = mode === 'Customer' ? customerMenuItems : senderMenuItems

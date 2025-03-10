@@ -4,6 +4,9 @@ import Home from './home/Home'
 import Profile from './sender/page/Profile'
 import SenderPage from './sender/page/SenderPage'
 import { SenderProvider } from './sender/service/SenderService'
+import Goods from './sender/page/Goods'
+import { GoodProvider } from './sender/service/GoodService'
+import NewGood from './sender/page/NewGood'
 
 function App() {
     return (
@@ -19,6 +22,22 @@ function App() {
                             <SenderProvider>
                                 <SenderPage />
                             </SenderProvider>
+                        }
+                    />
+                    <Route
+                        path="/goods"
+                        element={
+                            <GoodProvider>
+                                <Goods />
+                            </GoodProvider>
+                        }
+                    />
+                    <Route
+                        path="/newgood"
+                        element={
+                            <GoodProvider>
+                                <NewGood />
+                            </GoodProvider>
                         }
                     />
                     <Route
